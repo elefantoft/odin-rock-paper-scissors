@@ -1,4 +1,3 @@
-//The computer randomly picks rock, paper, or scissors
 let computerSelection = "";
 function computerPlay() {
     computerSelection = Math.random()*3;
@@ -9,10 +8,9 @@ function computerPlay() {
     } else {
         computerSelection = "Scissors"
     }
-};
+    return computerSelection;
+}
 
-//The computer doesn't reveal it's pick
-//The user is prompted to choose rock, paper or scissor.
 let playerSelection = "";
 function playerPlay() {
     playerSelection = prompt("Rock, paper or scissors?");
@@ -21,17 +19,27 @@ function playerPlay() {
         return playerSelection;
     } else {
         playerPlay();
-    };
+    }
 }
 
-function playGame() {
+function playRound() {
     computerPlay();
-    playerSelection = prompt("Rock, paper or scissors?");
-    playerSelection.toLowerCase() + playerSelection.charAt(0).toUpperCase();
-    console.log(computerSelection);
-    console.log(playerSelection);
-    
-    
+    playerPlay();
+    if ((computerSelection === "Rock" && playerSelection === "Scissors") || (computerSelection === "Rock" && playerSelection == "Scissor")) {
+        alert("You Lose! Rock beats Scissors");
+    } else if (computerSelection === "Paper" && playerSelection === "Rock") {
+        alert("You Lose! Paper beats Rock");
+    } else if (computerSelection === "Scissors" && playerSelection === "Paper") {
+        alert("You Lose! Scissors beat Paper");
+    } else if (computerSelection === "Rock" && playerSelection === "Paper") {
+        alert("You Win! Paper beats Rock");
+    } else if ((computerSelection === "Paper" && playerSelection === "Scissors") || (computerSelection === "Paper" && playerSelection == "Scissor")) {
+        alert("You Win! Scissors beat Paper");
+    } else if (computerSelection === "Scissors" && playerSelection === "Rock") {
+        alert("You win! Rock beat Scissors");
+    } else {
+        alert("You picked the same! Try again");
+    }
 }
 
 
