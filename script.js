@@ -1,17 +1,42 @@
 //The computer randomly picks rock, paper, or scissors
-let computerChoice = Math.random()*3;
+let computerSelection = "";
 function computerPlay() {
-    if (computerChoice < 1) {
-        computerChoice = "Rock";
-    } else if (computerChoice < 2) {
-        computerChoice = "Paper";
+    computerSelection = Math.random()*3;
+    if (computerSelection < 1) {
+        computerSelection = "Rock";
+    } else if (computerSelection < 2) {
+        computerSelection = "Paper";
     } else {
-        computerChoice = "Scissors"
+        computerSelection = "Scissors"
     }
+};
+
+//The computer doesn't reveal it's pick
+//The user is prompted to choose rock, paper or scissor.
+let playerSelection = "";
+function playerPlay() {
+    playerSelection = prompt("Rock, paper or scissors?");
+    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+    if (playerSelection == "Rock" || playerSelection == "Paper" || playerSelection == "Scissor" || playerSelection == "Scissors") {
+        return playerSelection;
+    } else {
+        playerPlay();
+    };
+}
+
+function playGame() {
+    computerPlay();
+    playerSelection = prompt("Rock, paper or scissors?");
+    playerSelection.toLowerCase() + playerSelection.charAt(0).toUpperCase();
+    console.log(computerSelection);
+    console.log(playerSelection);
+    
+    
 }
 
 
-//The computer doesn't reveal it's pick
+
+
 //The user is prompted to choose rock, paper or scissor.
 //The user chooses rock, paper or scissor.
 //Any other imput, the user is prompted to pick either rock, paper or scissor.
