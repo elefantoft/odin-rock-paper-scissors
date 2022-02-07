@@ -21,38 +21,53 @@ function playerPlay() {
         playerPlay();
     }
 }
+let computerScore = 0;
+let playerScore = 0; 
 
 function playRound() {
     computerPlay();
     playerPlay();
     if ((computerSelection === "Rock" && playerSelection === "Scissors") || (computerSelection === "Rock" && playerSelection == "Scissor")) {
-        alert("You Lose! Rock beats Scissors");
+        alert("You Lose! Rock beats Scissors")
+        computerScore++;
     } else if (computerSelection === "Paper" && playerSelection === "Rock") {
         alert("You Lose! Paper beats Rock");
+        computerScore++;
     } else if (computerSelection === "Scissors" && playerSelection === "Paper") {
         alert("You Lose! Scissors beat Paper");
+        computerScore++;
     } else if (computerSelection === "Rock" && playerSelection === "Paper") {
         alert("You Win! Paper beats Rock");
+        playerScore++;
     } else if ((computerSelection === "Paper" && playerSelection === "Scissors") || (computerSelection === "Paper" && playerSelection == "Scissor")) {
         alert("You Win! Scissors beat Paper");
+        playerScore++;
     } else if (computerSelection === "Scissors" && playerSelection === "Rock") {
-        alert("You win! Rock beat Scissors");
+        alert("You win! Rock beat Scissors")
+        playerScore++;
     } else {
-        alert("You picked the same! Try again");
+        alert("You picked the same!");
     }
 }
 
-
-
-
-//The user is prompted to choose rock, paper or scissor.
-//The user chooses rock, paper or scissor.
-//Any other imput, the user is prompted to pick either rock, paper or scissor.
-//The computer reveals its pick
-//If the answers are equal, choose again.
-//If user picks scissor && computer picks paper = User won
-//Else computer won
-// If user picks paper && computer picks rock = User won
-//Else computer won
-//If user picks rock && computer picks scissor = User won
-//Else computer won
+function game() {
+    playerScore = 0;
+    computerScore = 0;
+    alert("Let's play some rock, paper, scissors!\nYou against the computer, best of 5...")
+    playRound();
+    console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
+    playRound();
+    console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
+    playRound();
+    console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
+    playRound();
+    console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
+    playRound();
+    if (computerScore > playerScore) {
+        alert(`You lost. Better luck next time!\nFinal score:\nYou: ${playerScore}, Computer: ${computerScore}`);
+    } else if (computerScore < playerScore) {
+        alert(`You won! Congratulations!\nFinal score:\nYou: ${playerScore}, Computer: ${computerScore}`);
+    } else {
+        alert(`It's a tie!\nFinal score:\nYou: ${playerScore}, Computer: ${computerScore}`)
+    }
+}
