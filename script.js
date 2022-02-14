@@ -21,6 +21,7 @@ function playerPlay() {
         playerPlay();
     }
 }
+
 let computerScore = 0;
 let playerScore = 0; 
 
@@ -49,6 +50,15 @@ function playRound() {
         alert("You picked the same!");
     }
 }
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.id;
+        playRound();
+    });
+});
+
 
 //function game() {
   //  playerScore = 0;
