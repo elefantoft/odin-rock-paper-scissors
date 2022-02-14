@@ -50,24 +50,24 @@ function playRound() {
     }
 }
 
-function game() {
-    playerScore = 0;
-    computerScore = 0;
-    alert("Let's play some rock, paper, scissors!\nYou against the computer, best of 5...")
-    playRound();
-    console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
-    playRound();
-    console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
-    playRound();
-    console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
-    playRound();
-    console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
-    playRound();
-    if (computerScore > playerScore) {
-        alert(`You lost. Better luck next time!\nFinal score:\nYou: ${playerScore}, Computer: ${computerScore}`);
-    } else if (computerScore < playerScore) {
-        alert(`You won! Congratulations!\nFinal score:\nYou: ${playerScore}, Computer: ${computerScore}`);
-    } else {
-        alert(`It's a tie!\nFinal score:\nYou: ${playerScore}, Computer: ${computerScore}`)
-    }
-}
+//function game() {
+  //  playerScore = 0;
+  //  computerScore = 0;
+  //  alert("Let's play some rock, paper, scissors!\nYou against the computer, best of 5...")
+  //  playRound();
+  //  console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
+  //  playRound();
+  //  console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
+  //  playRound();
+  //  console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
+  //  playRound();
+  //  console.log(`Your score: ${playerScore}, Computer score: ${computerScore}`);
+  //  playRound();
+  //  if (computerScore > playerScore) {
+  //      alert(`You lost. Better luck next time!\nFinal score:\nYou: ${playerScore}, Computer: ${computerScore}`);
+  //  } else if (computerScore < playerScore) {
+  //      alert(`You won! Congratulations!\nFinal score:\nYou: ${playerScore}, Computer: ${computerScore}`);
+  //  } else {
+  //      alert(`It's a tie!\nFinal score:\nYou: ${playerScore}, Computer: ${computerScore}`)
+  //  }
+//}
